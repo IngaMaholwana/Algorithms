@@ -1,1 +1,1 @@
-This repo will showcase some of the algorithms I have learnt and are continuoesly learning
+This repository serves as a collection of algorithms I have learned and continue to explore. It showcases my ongoing study and implementation of various algorithmic techniques.
