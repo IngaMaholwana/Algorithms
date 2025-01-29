@@ -16,7 +16,22 @@ def merge_sort(array)
   mid = array.length / 2 
   left_half = merge_sort(array[0...mid]) 
   right_half = merge_sort(array[mid..-1])  
+
+  merge(left_half, right_half)
   
 end
 
+def merge(left, right)
+  sorted = []  # Array to store merged result
+  until left.empty? || right.empty?
+    if left.first <= right.first
+      sorted << left.shift  # Remove the first element from left and add to sorted
+    else
+      sorted << right.shift # Remove the first element from right and add to sorted
+    end
+  end
+  sorted + left + right  # Append any remaining elements
+end
+
 p merge_sort([3, 2, 1, 13, 8, 5, 0, 1])
+p merge_sort([105, 79, 100, 110]) 
