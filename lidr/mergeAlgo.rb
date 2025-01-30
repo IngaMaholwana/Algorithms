@@ -35,3 +35,17 @@ end
 
 p merge_sort([3, 2, 1, 13, 8, 5, 0, 1])
 p merge_sort([105, 79, 100, 110]) 
+
+def odd_numbers_less_than_ten
+  current_number = 1
+
+  while current_number < 10
+    if current_number % 2 != 0
+      puts current_number
+    end
+
+    current_number += 1
+  end
+end
+
+p odd_numbers_less_than_ten
