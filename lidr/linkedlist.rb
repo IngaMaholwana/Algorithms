@@ -1,3 +1,5 @@
+require 'node.rb'
+
 class LinkedList
 
 
