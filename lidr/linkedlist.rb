@@ -46,5 +46,54 @@ class LinkedList
       @head = nil
     end
   end
-  
+  def contains?(value)
+    node = @head
+    while node
+      return true if node.value == value
+      node = node.next_node
+    end
+    false
+  end
+  def find(value)
+    node = @head
+    index = 0
+    while node
+      return index if node.value == value
+      node = node.next_node
+      index += 1
+    end
+    nil
+  end
+  def to_s
+    node = @head
+    string = ""
+    while node
+      string += "( #{node.value} ) -> "
+      node = node.next_node
+    end
+    string += "nil"
+  end
+  def insert_at(value, index)
+    if index == 0
+      prepend(value)
+    else
+      node = @head
+      (index - 1).times do
+        node = node.next_node
+      end
+      node.next_node = Node.new(value, node.next_node)
+    end
+  end
+  def remove_at(index)
+    if index == 0
+      @head = @head.next_node
+    else
+      node = @head
+      (index - 1).times do
+        node = node.next_node
+      end
+      node.next_node = node.next_node.next_node
+    end
+  end
+
 end
